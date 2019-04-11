@@ -1,0 +1,11 @@
+<svg id="maker.svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="84" viewBox="0 0 60 84">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+        fill: #38b48b;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M30,0A29.008,29.008,0,0,0,.993,29.05C0.993,50.84,30,83.005,30,83.005S59,50.84,59,29.05A29.008,29.008,0,0,0,30,0Zm0,39.429A10.376,10.376,0,1,1,40.358,29.05,10.371,10.371,0,0,1,30,39.426Z"/>
+</svg>
