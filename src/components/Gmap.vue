@@ -67,7 +67,7 @@ export default {
         self.data.map.setMapTypeId( 'GrayScaleMap' );
       }
       // 地図をCustomに
-      if(style === 'Custom') {
+      if(style === 'Custom' && json !== '') {
         let mapStyle = json;
         let mapType = new google.maps.StyledMapType(mapStyle);
         self.data.map.mapTypes.set( 'CustomMap', mapType);

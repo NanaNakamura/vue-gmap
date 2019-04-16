@@ -1,6 +1,58 @@
 # vue-gmap
 
-> A Vue.js project
+グーグルマップを表示するコンポーネント
+
+🗾<a href="https://nananakamura.github.io/c/vue-gmap/index.html" target="_blank">Demo</a>
+
+
+## Usage
+
+### HTML
+```
+<template>
+  <Gmap
+    :lat="35.003248"
+    :lng="135.758471"
+  />
+</template>
+```
+
+| Props | Type | Default | Description |
+|-------|------|---------|-------------|
+| lat | Number | 35.681236 | (必須) 緯度 |
+| lng | Number | 139.767125 | (必須) 経度 |
+| zoom | Number | 17 | (任意) 地図のズームレベル(0～18) |
+| makerSrc | String |  | (任意) オリジナルマーカーを設定する場合の画像パス |
+| makerWidth | Number |  | (任意) オリジナルマーカーの画像の横幅 |
+| makerHeight | Number |  | (任意) オリジナルマーカーの画像の縦幅 |
+| type | String |  | (任意) `GrayScaleMap` or `CustomMap` |
+| styleJson | Array |  | (任意) CustomMapのみ記入  https://mapstyle.withgoogle.com/ で作ったstyle jsonを使う  |
+
+
+### scripts
+
+.vueファイルコンポーネントフォルダーにコピペして、  
+componentsに追加？
+
+```
+import Gmap from './components/Gmap'
+
+export default {
+  components: {
+    Gmap
+  },
+  mounted () {
+    // グーグルマップAPIの読み込み
+    google.maps.event.addDomListener(window, 'load', () => {
+      this.$children.forEach(element => {
+        if(element.$options.name === 'Gmap') {
+          element.init();
+        }
+      });
+    });
+  }
+}
+```
 
 ## Build Setup
 

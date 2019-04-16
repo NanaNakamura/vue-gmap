@@ -306,8 +306,9 @@ export default {
     Gmap
   },
   mounted () {
+    // グーグルマップAPIの読み込み
     google.maps.event.addDomListener(window, 'load', () => {
-      console.log('google map js 読み込み完了')
+      // グーグルマップAPIの読み込み完了
       this.$children.forEach(element => {
         if(element.$options.name === 'Gmap') {
           element.init();
