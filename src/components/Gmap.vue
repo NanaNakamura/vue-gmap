@@ -10,8 +10,8 @@ export default {
       data: {
         map: '',
         zoom: 17,
-        lat: '35.681236',
-        lng: '139.767125'
+        lat: 35.681236,
+        lng: 139.767125
       }
     }
   },
@@ -28,23 +28,18 @@ export default {
   methods: {
     init () {
       let self = this
-      let lat = self.lat
-      let lng = self.lng
-      let zoom = self.zoom
+      self.data.lat = (!self.lat) ? self.data.lat : self.lat
+      self.data.lng = (!self.lng) ? self.data.lng : self.lng
+      self.data.zoom = (!self.zoom) ? self.data.zoom : self.zoom
       let makerSrc = self.makerSrc
       let makerWidth = self.makerWidth
       let makerHeight = self.makerHeight
       let style = self.type
       let json = self.styleJson
 
-      // ズームの値
-      if(zoom) {
-        self.data.zoom = zoom
-      }
-
       // 地図を表示
       self.data.map = new google.maps.Map(self.$el, {
-        center: {lat: lat, lng: lng},
+        center: {lat: self.data.lat, lng: self.data.lng},
         zoom: self.data.zoom,
         // コントローラーの設定
         zoomControl: true,
@@ -75,7 +70,7 @@ export default {
       }
 
       // ピンを立てる
-      let pos = {lat: lat, lng: lng};
+      let pos = {lat: self.data.lat, lng: self.data.lng};
       self.addMaker(pos, makerSrc, makerWidth, makerHeight);
     },
     addMaker (position, src, width, height) {

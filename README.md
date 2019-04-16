@@ -2,7 +2,7 @@
 
 グーグルマップを表示するコンポーネント
 
-🗾<a href="https://nananakamura.github.io/c/vue-gmap/index.html" target="_blank">Demo</a>
+🗾<a href="https://dev.1-10.net/nakamura/c/vue-gmap/index.html" target="_blank">Demo</a>
 
 
 ## Usage
